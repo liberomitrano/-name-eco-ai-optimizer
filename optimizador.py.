@@ -1,0 +1,12 @@
+import torch
+from torch.ao.quantization import quantize_dynamic
+
+# Eco-AI Optimizer by Libero Mitrano
+# Goal: Reduce energy and water consumption in AI models
+def optimize_model(model):
+    optimized_model = quantize_dynamic(
+        model, {torch.nn.Linear}, dtype=torch.qint8
+    )
+    return optimized_model
+
+print("Eco-AI Optimization process initialized...")
